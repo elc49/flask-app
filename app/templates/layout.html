@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{ title }} | Project Dream Team</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+</head>
+<body>
+  {% include "includes/_navbar.html" %}
+    <div class="wrapper">
+      {% block body %}
+      {% endblock %}
+      <div class="push"></div>
+    </div>
+   {% include "includes/_footer.html" %}
+</body>
+</html>
