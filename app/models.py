@@ -13,7 +13,7 @@ class Employee(UserMixin, db.Model):
 	username = db.Column(db.String(60), index=True, unique=True)
 	first_name = db.Column(db.String(60), index=True)
 	last_name = db.Column(db.String(60), index=True)
-	password_hash = db.column(db.String(128))
+	password_hash = db.Column(db.String(128))
 	department_id = db.Column(db.Integer, db.ForeignKey("departments.id"))
 	role_id = db.Column(db.Integer, db.ForeignKey("roles.id"))
 	is_admin = db.Column(db.Boolean, default=False)
