@@ -43,6 +43,11 @@ def login():
 		if employee is not None and employee.verify_password(form.password.data):
 			# login employee
 			login_user(employee)
+
+			if employee.is_admin:
+				# Redirect to admin dashboard
+				return redirect(url_for("home.admin_dashboard"))
+
 			# redirect to dashboard page
 			return redirect(url_for("home.dashboard"))
 
